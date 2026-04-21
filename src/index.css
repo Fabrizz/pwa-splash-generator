@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,600&display=swap');
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #0a0a0a;
+  --bg-2: #0d0d0d;
+  --bg-3: #111111;
+  --border: #1e1e1e;
+  --border-2: #2a2a2a;
+  --text: #e8e8e0;
+  --text-muted: #555555;
+  --text-dim: #333333;
+  --accent: #e8e8e0;
+  --green: #7a9a7a;
+  --mono: 'Space Mono', Courier, monospace;
+  --sans: 'DM Sans', system-ui, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 14px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #333; }

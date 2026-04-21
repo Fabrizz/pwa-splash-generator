@@ -1,0 +1,284 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ── Header ──────────────────────────────────────────── */
+.header {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 28px;
+  flex-shrink: 0;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.logoBox {
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--text);
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.githubLink {
+  margin-left: auto;
+  color: var(--text-muted);
+  font-size: 14px;
+  transition: color 0.15s;
+  background-color: #ffffff13;
+  padding: 4px 6px;
+  border-radius: 8px;
+}
+.titleContainer {
+  flex: 1;
+}
+.logoInner { width: 14px; height: 14px; background: var(--text); }
+.logoTitle {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.logoSub {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  letter-spacing: 0.04em;
+}
+
+/* ── Layout ───────────────────────────────────────────── */
+.layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  flex: 1;
+  min-height: 0;
+}
+
+/* ── Sidebar ──────────────────────────────────────────── */
+.sidebar {
+  border-right: 1px solid var(--border);
+  padding: 20px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.section {}
+.sectionLabel {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+/* Crop mode */
+.modeGroup { display: flex; flex-direction: column; gap: 6px; }
+.modeBtn {
+  background: transparent;
+  border: 1px solid #222;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 9px 12px;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.modeBtn:hover:not(.active) { border-color: #444; }
+.modeBtn.active { border-color: var(--text); background: #141414; color: var(--text); }
+.modeBtnLabel {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.modeBtnDesc { font-size: 10px; color: var(--text-muted); }
+.modeBtn.active .modeBtnDesc { color: #777; }
+
+/* Filter */
+.filterGroup { display: flex; gap: 6px; flex-wrap: wrap; }
+.filterBtn {
+  background: transparent;
+  border: 1px solid #222;
+  color: var(--text-muted);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 6px 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: border-color 0.15s, color 0.15s;
+}
+.filterBtn:hover:not(.active) { border-color: #444; }
+.filterBtn.active { border-color: var(--text); color: var(--text); background: #141414; }
+.filterCount {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-dim);
+  margin-top: 8px;
+}
+
+/* Path input */
+.pathInput {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #222;
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 8px 12px;
+  letter-spacing: 0.04em;
+  transition: border-color 0.15s;
+  outline: none;
+}
+.pathInput:focus { border-color: var(--text); }
+.pathInput::placeholder { color: var(--text-dim); }
+
+/* Buttons */
+.generateBtn {
+  width: 100%;
+  background: var(--text);
+  color: var(--bg);
+  border: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 11px 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: background 0.15s, transform 0.15s;
+}
+.generateBtn:hover:not(:disabled) { background: #fff; transform: translateY(-1px); }
+.generateBtn:disabled { opacity: 0.3; cursor: not-allowed; transform: none; }
+
+.progressBar {
+  height: 2px;
+  background: #1a1a1a;
+  margin-top: 10px;
+}
+.progressFill {
+  height: 100%;
+  background: var(--text);
+  transition: width 0.1s linear;
+}
+
+.downloadBtn {
+  width: 100%;
+  background: #141414;
+  color: var(--text);
+  border: 1px solid #2a2a2a;
+  font-family: var(--mono);
+  font-size: 11px;
+  padding: 10px 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: border-color 0.15s;
+  margin-bottom: 8px;
+}
+.downloadBtn:hover { border-color: var(--text-muted); }
+
+.metaToggle {
+  width: 100%;
+  background: transparent;
+  color: var(--text-muted);
+  border: 1px solid #1e1e1e;
+  font-family: var(--mono);
+  font-size: 10px;
+  padding: 8px 16px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  transition: border-color 0.15s, color 0.15s;
+}
+.metaToggle:hover, .metaToggle.active {
+  border-color: #333;
+  color: var(--text);
+}
+
+/* ── Main ─────────────────────────────────────────────── */
+.main {
+  padding: 24px;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+/* ── Mobile ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .header {
+    padding: 14px 16px;
+  }
+
+  .app {
+    min-height: unset;
+  }
+
+  .layout {
+    grid-template-columns: 1fr;
+    flex: unset;
+    min-height: unset;
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 16px;
+    overflow-y: visible;
+    gap: 18px;
+  }
+
+  .modeGroup {
+    flex-direction: row;
+  }
+
+  .modeBtn {
+    flex: 1;
+  }
+
+  .main {
+    padding: 16px;
+    overflow-y: visible;
+  }
+}
+
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  min-height: 360px;
+  color: var(--text-dim);
+  text-align: center;
+}
+.emptyIcon {
+  font-size: 48px;
+  opacity: 0.2;
+  margin-bottom: 16px;
+}
+.empty p {
+  font-family: var(--mono);
+  font-size: 12px;
+  line-height: 2;
+  color: #333;
+}
+
+.resultsHeader {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 14px;
+}
